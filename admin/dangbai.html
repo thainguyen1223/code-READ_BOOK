@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<script language="JavaScript">
+  function check() {
+    var kt = document.frm;
+
+    if (kt.title.value == "") {
+      alert("Bạn chưa nhập Tiêu Đề!");
+      kt.title.focus();
+      return false;
+    } else if (kt.noidung.value == "") {
+      alert("Bạn chưa nhập nội dung!");
+      kt.txttnsx.focus();
+      return false;
+    } else if (kt.tag.value == "") {
+      alert("Bạn chưa nhập Tag!");
+      kt.tag.focus();
+      return false;
+    } else if (kt.nguon.value == "") {
+      alert("Bạn chưa nhập nguồn!");
+      kt.nguon.focus();
+      return false;
+    }
+  }
+</script>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./dangbai.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:300"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Đăng bài - RealBook</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="tieude">Đăng bài viết</div>
+      <form
+        name="frm"
+        action="insert_dangbai.php"
+        method="post"
+        onSubmit="return check()"
+      >
+        <p>Tiêu đề:</p>
+        <input type="text" name="title" id="title" /><br />
+        <p>Nội dung:</p>
+        <input
+          type="text"
+          name="noidung"
+          id="noidung"
+          style="height: 480px"
+        /><br />
+        <p>URL hình ảnh</p>
+        <input type="text" name="hinh" id="hinh" /><br />
+        <p>Nguồn: <input type="text" name="nguon" id="nguon" /><br /></p>
+        <p>Tag:</p>
+        <input type="text" name="tag" id="tag" /><br />
+        <input type="submit" value="Submit" onClick="check()" /><br />
+      </form>
+    </div>
+  </body>
+</html>
